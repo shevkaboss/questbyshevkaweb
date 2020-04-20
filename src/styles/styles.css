@@ -4,10 +4,23 @@
     justify-content: center;
 }
 
+.game-core{
+    min-height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.game-root{
+    width: 80%;
+}
+
 .pre-game{
     display: flex;
     justify-content: center;
     flex-direction: column;
+    height: 700px;
+    justify-content: space-around;
 }
 
 .pg-btn-start{
@@ -46,5 +59,11 @@
 
 .questionBlocks h2{
     align-self: center;
+}
+.questionBlocks div{
+    font-style: italic;
+    text-align: justify;
+    text-indent: 20px;
+    line-height: 18px;
 }
 

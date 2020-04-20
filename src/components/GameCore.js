@@ -11,6 +11,7 @@ class GameCore extends Component{
             questionNumber : this.props.initQuestion.order,
             isLastQuestion : this.props.initQuestion.isLastQuestion,
             answerStatus : '',
+            asnwerStatusColor : 'red',
             answerValue : ''
         }
         this.gameFinishedCallback = this.props.gameFinishedCallback;
@@ -32,17 +33,17 @@ class GameCore extends Component{
                     this.proceedToNextQuestion();
                 }
                 else{
-                    this.setState({answerStatus : 'Accepted'})
+                    this.setState({answerStatus : 'Accepted', asnwerStatusColor : 'green'})
                 }
             }
             else if (result.data.isAnswerCorrect === 'AlreadyAccepted'){
                 if (this.state.isLastQuestion){
                     this.gameFinishedCallback();
                 }
-                this.setState({answerStatus : 'Already Accepted'})
+                this.setState({answerStatus : 'Already Accepted', asnwerStatusColor : 'yellow'})
             }
             else{
-                this.setState({answerStatus : 'Wrong'})
+                this.setState({answerStatus : 'Wrong', asnwerStatusColor : 'red'})
             }
 
         }
@@ -65,7 +66,7 @@ class GameCore extends Component{
         let answerStatus;
         if (this.state.answerStatus !== '')
         {
-            answerStatus = <div>{this.state.answerStatus}</div>
+            answerStatus = <div style = {{color: this.state.asnwerStatusColor}}>{this.state.answerStatus}</div>
         }
         return(
             <div className='game-core'>
@@ -73,9 +74,9 @@ class GameCore extends Component{
                 <form onSubmit={this.proceedAnswer} className = 'answer-form'>
                     <div className = 'nmbr-keys-h'> Number of answers needed (total): {this.state.numberOfKeys}. </div>
                     <input type="text" className = 'answr-input' value = {this.state.answerValue} onChange = {this.handleInputChange.bind(this)} />
+                    {answerStatus}
                     <input type="submit" className = 'answr-input answr-submit' value="Procced Answer" />
                 </form>
-                {answerStatus}
             </div>
         )
     }
