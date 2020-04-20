@@ -7,7 +7,7 @@ class Question extends Component{
         })  
         return(
             <div className='questionBlocks'>
-                <h1>{this.props.questionData.title}</h1>
+                <h2>{this.props.questionData.title}</h2>
                 {questionBlocks}
             </div>
         )

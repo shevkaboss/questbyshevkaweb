@@ -25,7 +25,7 @@ class GameCore extends Component{
         if (result.status === 200){
             if (result.data.isAnswerCorrect === 'Accepted'){
                 if (result.data.needToProceedToNextQuestion === true){
-                    if (this.state.isLastQuestion){                       
+                    if (this.state.isLastQuestion){              
                         this.gameFinishedCallback();
                         return;
                     }
@@ -51,7 +51,7 @@ class GameCore extends Component{
     async proceedToNextQuestion(){
         var result = await Api.get('/GetNextQuestion');
         if (result.status === 200){
-            this.setState({questionData : result.data, numberOfKeys : result.data.numberOfKeys, questionNumber : result.data.order, isLastQuestion : result.data.isLastQuestion})
+            this.setState({questionData : result.data, numberOfKeys : result.data.numberOfKeys, questionNumber : result.data.order, isLastQuestion : result.data.isLastQuestion, answerStatus : ''})
         }
     }
 
@@ -70,10 +70,10 @@ class GameCore extends Component{
         return(
             <div className='game-core'>
                 <Question questionData = {this.state.questionData}/>
-                <form onSubmit={this.proceedAnswer}>
-                    <div> Number of asnwers needed: {this.state.numberOfKeys}. </div>
-                    <input type="text" value = {this.state.answerValue} onChange = {this.handleInputChange.bind(this)} />
-                    <input type="submit" value="Procced Answer" />
+                <form onSubmit={this.proceedAnswer} className = 'answer-form'>
+                    <div className = 'nmbr-keys-h'> Number of answers needed (total): {this.state.numberOfKeys}. </div>
+                    <input type="text" className = 'answr-input' value = {this.state.answerValue} onChange = {this.handleInputChange.bind(this)} />
+                    <input type="submit" className = 'answr-input answr-submit' value="Procced Answer" />
                 </form>
                 {answerStatus}
             </div>

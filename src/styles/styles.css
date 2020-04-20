@@ -1,0 +1,48 @@
+#root{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 300px;
+}
+
+.pre-game{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.pg-btn-start{
+    font-size: 20px;
+}
+
+.nmbr-keys-h{
+    font-size: 12px;
+    font-style: italic;
+}
+
+.answr-input{
+    border: 1px solid #746161;
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-size: 12px;
+}
+
+.answer-form{
+    margin: 5px;
+    padding: 5px;
+}
+
+.answr-submit{
+    margin: 3px 5px;
+    background-color: darkseagreen;
+}
+
+.questionBlocks{
+    display: flex;
+    flex-direction: column;
+}
+
+.questionBlocks h2{
+    align-self: center;
+}
+
