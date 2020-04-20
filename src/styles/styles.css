@@ -2,7 +2,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 300px;
 }
 
 .pre-game{
@@ -24,22 +23,25 @@
     border: 1px solid #746161;
     border-radius: 5px;
     padding: 5px 10px;
-    font-size: 12px;
+    font-size: 18px;
 }
 
 .answer-form{
     margin: 5px;
     padding: 5px;
+    display: flex;
+    flex-direction: column
 }
 
 .answr-submit{
-    margin: 3px 5px;
+    margin: 10px 0px;
     background-color: darkseagreen;
 }
 
 .questionBlocks{
     display: flex;
     flex-direction: column;
+    min-height: 300px;
 }
 
 .questionBlocks h2{
