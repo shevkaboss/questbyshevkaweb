@@ -2,6 +2,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    max-width: 375px;
 }
 
 .game-core{
@@ -17,14 +18,15 @@
 
 .pre-game{
     display: flex;
-    justify-content: center;
     flex-direction: column;
     height: 700px;
     justify-content: space-around;
+    align-items: center;
 }
 
 .pg-btn-start{
     font-size: 20px;
+    width: 100%;
 }
 
 .nmbr-keys-h{
@@ -51,19 +53,21 @@
     background-color: darkseagreen;
 }
 
-.questionBlocks{
+.question-blocks{
     display: flex;
     flex-direction: column;
     min-height: 300px;
 }
 
-.questionBlocks h2{
+.question-blocks h2{
     align-self: center;
 }
-.questionBlocks div{
+.question-block{
+    margin-bottom: 3px;
     font-style: italic;
     text-align: justify;
     text-indent: 20px;
-    line-height: 18px;
+    line-height: 20px;
+    font-size: 20px;
 }
 
