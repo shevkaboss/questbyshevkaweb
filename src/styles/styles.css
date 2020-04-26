@@ -61,6 +61,7 @@
 
 .question-blocks h2{
     align-self: center;
+    text-align: center;
 }
 .question-block{
     margin-bottom: 3px;
@@ -69,5 +70,19 @@
     text-indent: 20px;
     line-height: 20px;
     font-size: 20px;
+}
+
+.finished-block{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.finished-block h2{
+    text-align: center;
+}
+
+.finished-block img{
+    max-width: 200px;
 }
 

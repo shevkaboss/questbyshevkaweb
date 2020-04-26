@@ -13,7 +13,8 @@ class App extends Component{
     this.endGame = this.endGame.bind(this);
     this.state = {
       gameStatus: '',
-      initQuestion: ''
+      initQuestion: '',
+      finishCoord: ''
     }
   }
 
@@ -39,7 +40,8 @@ class App extends Component{
     var result = await Api.get('/FinishGame');
     if (result.status === 200){
       this.setState({
-        gameStatus : 'Finished'
+        gameStatus : 'Finished',
+        finishCoord : result.data
       });
     }
   }
@@ -53,7 +55,7 @@ class App extends Component{
       else if (gameStatus === 'NotStarted')
         return <NotStarted callBack = {this.startGame.bind(this)}/>
       else
-        return <Finished />
+        return <Finished finishCoord={this.state.finishCoord}/>
   }
 
   async getGameStatus(){
@@ -67,6 +69,16 @@ class App extends Component{
             return;
           }
         }
+
+        if (result.data === 'Finished'){
+          var resultCoord = await Api.get('/GetFinishCoords');
+          if (resultCoord.status === 200){
+            this.setState({
+              finishCoord : resultCoord.data
+            });
+          }
+        }
+        
         this.setState({gameStatus : result.data});
       }
   }
