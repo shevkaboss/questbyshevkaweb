@@ -16,6 +16,7 @@ class NotStarted extends Component{
         return(
             <div className = 'pre-game'>
                 <h1>Лашици впєрьод!</h1>
+                <h3>За допомогою - Renault Service.</h3>
                 <button onClick={this.handleClick} className = 'pg-btn-start'>Start game</button>
             </div>
         )

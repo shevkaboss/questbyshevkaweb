@@ -72,10 +72,10 @@ class GameCore extends Component{
             <div className='game-core'>
                 <Question questionData = {this.state.questionData}/>
                 <form onSubmit={this.proceedAnswer} className = 'answer-form'>
-                    <div className = 'nmbr-keys-h'> Number of answers needed (total): {this.state.numberOfKeys}. </div>
+                    <div className = 'nmbr-keys-h'> Загальна к-сть відповідей: {this.state.numberOfKeys}. Допомога - Reanult Service</div>
                     <input type="text" className = 'answr-input' value = {this.state.answerValue} onChange = {this.handleInputChange.bind(this)} />
                     {answerStatus}
-                    <input type="submit" className = 'answr-input answr-submit' value="Procced Answer" />
+                    <input type="submit" className = 'answr-input answr-submit' value="Відповісти" />
                 </form>
             </div>
         )
